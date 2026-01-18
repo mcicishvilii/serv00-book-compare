@@ -17,7 +17,7 @@ app.add_middleware(
 db = PostgresStore()
 db.init_schema()
 
-@app.route('/test')
+@app.get('/test')
 def test_connection():
     return {
         "status": "success",
