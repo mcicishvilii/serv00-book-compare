@@ -17,6 +17,14 @@ app.add_middleware(
 db = PostgresStore()
 db.init_schema()
 
+@app.route('/test')
+def test_connection():
+    return {
+        "status": "success",
+        "message": "GitHub Actions is working!",
+        "server_time": "Now"
+    }
+
 @app.get("/health")
 def health():
     return {"ok": True}
